@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>john grzinich audioswarm tracks</title>
+</head>
+<link rel="stylesheet" href="./geofractions.css" />
+
+<body>
+  <div class="centered_container">
+    <div>
+      <img src="img/Geofractions02url.png" alt="audioswarm qr code url link">
+    </div><br>
+    <div>
+        <img id="trigger" src="img/icons/play-button.png" alt="PLAY" width="150" />
+    </div>
+     <div class="audio_group">     
+      <audio id="recording" controls="true">
+        <source src="audio/GeofractionsPhone-London-2024.mp3" type="audio/mpeg">
+      </audio> 
+       <div class="names"> 
+        <i>John Grzinich<br>
+        AudioSwarm : Geofractions</i>
+      </div>
+    </div>  
+  </div>
+  <footer>
+    <div class="attribution">
+      <a href="https://maaheli.ee/main/" title="website of john grzinich">maaheli.ee</a>
+      </div>
+  </footer>
+  <script type="text/javascript">
+    const audio = new Audio("audio/GeofractionsPhone-London-2024.mp3")
+    const trigger = document.querySelectorAll("#trigger")
+    let playing = false
+    trigger.forEach(button => {
+      button.addEventListener("click", () => {
+        if (playing) {
+          audio.pause()
+          button.src="img/icons/play-button.png"
+        } else {
+          audio.play()
+          button.src="img/icons/pause.png"
+        }
+        playing = !playing
+      })
+    })
+  </script>
+</body
+</html>
